@@ -111,7 +111,7 @@ const Chat = () => {
                 onChange={(e) => setPrompt(e.target.value)}
                 style={{ resize: "none" }}
                 placeholder="Place your social media post here..."
-                className="border-none lg:w-3xl w-full h-40 mt-2 rounded-2xl bg-neutral-900 placeholder:text-neutral-600 overflow-y-auto px-4 py-2.5 md:text-sm text-xs"
+                className="border-none w-full h-40 mt-2 rounded-2xl bg-neutral-900 placeholder:text-neutral-600 overflow-y-auto px-4 py-2.5 md:text-sm text-xs"
             />
 
             {/* Usage counter */}

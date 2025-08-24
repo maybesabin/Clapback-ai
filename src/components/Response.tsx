@@ -3,6 +3,7 @@
 import { Copy, Twitter } from "lucide-react"
 import { Button } from "./ui/button"
 import { useGlobalContext } from "@/context/GlobalContext"
+import { toast } from "sonner"
 
 const Response = () => {
     const { response, responseMode } = useGlobalContext()
@@ -19,14 +20,14 @@ const Response = () => {
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(response)
-            // You could add a toast notification here if you want
+            toast.success("Copied to clipboard!")
         } catch (error) {
             console.error('Failed to copy text:', error)
         }
     }
 
     return (
-        <div className={`mt-2 lg:w-3xl w-full border-l rounded-2xl p-4 bg-neutral-900/20 ${isRefined ? 'border-green-600' : 'border-red-800'
+        <div className={`mt-2 w-full border-l rounded-2xl p-4 bg-neutral-900/20 ${isRefined ? 'border-green-600' : 'border-red-800'
             }`}>
             <h4 className="text-xs text-neutral-400">
                 {isRefined ? '🟢 Refined' : '🔴 Roasted'}
